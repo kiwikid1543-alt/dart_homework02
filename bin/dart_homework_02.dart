@@ -59,12 +59,13 @@ void main() async {
     print('잘못된 학생 이름을 입력하셨습니다. 다시 입력해주세요');
   } else {
     // 1. 출력된 값 저장하기
+
     // 2. 저장완료 메시지 출력
     File txtSave = File('results.txt'); // 저장할 파일 위치 설정
 
     try {
       txtSave.writeAsStringSync(
-        '이름: ${target.name} 점수: ${target.score}',
+        '이름: ${target.name}, 점수: ${target.score}', // writeAsString
       ); // 파일을 읽거나 쓸때 에러를 막기위해 try
       print('저장이 완료되었습니다.');
     } catch (e) {
